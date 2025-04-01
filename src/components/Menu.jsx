@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar'
 import './Menu.css';
 import burger from '../assets/Burger.jpeg';
@@ -9,7 +9,22 @@ import meals from '../assets/SouthIndian.jpeg';
 import foody from '../assets/foody.jpg';
 import Footer from './footer';
 
-const Menu = () => {
+function Menu() {
+     const [cart, setCart] = useState([]);
+    
+      useEffect(
+        () => {
+          const savedCart = JSON.parse(localStorage.getItem('cart')) || [];
+          setCart(savedCart);
+        }, []
+      );
+    
+      const addToCart = (item) => {
+        const updatedCart = [...cart,item];
+        setCart(updatedCart);
+        localStorage.setItem("cart",JSON.stringify(updatedCart));
+        alert('Item added to cart')
+      };
      const products = [
         { id: 1, name: "Burger", description: "Delicious burger", image: burger, price:445 },
         { id: 2, name: "Cold Coffee", description: "Refreshing cold coffee", image: coldcofee, price:299 },
@@ -27,7 +42,7 @@ const Menu = () => {
   return (
     <div>
       <Navbar />
-      <h1 class='bf'>BiteBlizz Spl BreakFast</h1>
+      <h1 class='bf'>BiteBlizz Special BreakFast</h1>
       {/* <div class="card bg-dark text-white">
   <img src={bf1} class="card-img" alt="..." />
 </div> */}
@@ -49,7 +64,7 @@ const Menu = () => {
 
   </div>
     </div>
-    <h1 className='bf'>BiteBlizz Spl Lunch</h1>
+    <h1 className='bf'>BiteBlizz Special Lunch</h1>
     {/* <div class="card bg-dark text-white">
   <img src={bf1} class="card-img" alt="..." />
 </div> */}
@@ -71,12 +86,12 @@ const Menu = () => {
 
   </div>
     </div>
-    <h1 className='bf'>BiteBlizz Spl Dinner</h1>
+    <h1 className='bf'>BiteBlizz Special Dinner</h1>
     {/* <div class="card bg-dark text-white">
   <img src={bf1} class="card-img" alt="..." />
 </div> */}
 <div id='cards'>
-    <div class="row row-cols-1 row-cols-md-6 g-4 mt-4">
+    <div class="row row-cols-1 row-cols-md-6 g-4 mt-4 mb-4">
       {products.map((item) => (
   <div class="col" key={item.id}>
     <div class="card h-100">

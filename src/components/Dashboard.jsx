@@ -38,7 +38,9 @@ function Dashboard() {
     { id: 3, name: "Dessert", description: "Sweet and tasty dessert", image: dessert, price:245 },
     { id: 4, name: "Pizza", description: "Cheesy and delicious pizza", image: pizza, price:645 },
     { id: 5, name: "South Indian Meal", description: "Traditional South Indian meal", image: meals, price:200 },
-    { id: 6, name: "Food", description:"Delicious food for lunch", image: foody, price:500}
+    { id: 6, name: "Food", description:"Delicious food for lunch", image: foody, price:500},
+    { id: 7, name: "Cold Coffee", description: "Refreshing cold coffee", image: coldcofee, price:299 },
+    { id: 8, name: "South Indian Meal", description: "Traditional South Indian meal", image: meals, price:200 }
   ];
   return (
     <div>
@@ -84,7 +86,7 @@ function Dashboard() {
 </div>
 <h1 className='taste'>TASTE THE BITES</h1>
     <div id='cards'>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
       {products.map((item) => (
   <div class="col" key={item.id}>
     <div class="card h-100">
