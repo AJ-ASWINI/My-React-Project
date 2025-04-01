@@ -1,0 +1,95 @@
+  *{
+    margin: 0;
+  }
+
+  #container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+  }
+  .half {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .left {
+    background: url('/src/assets/loginwp.jpg') no-repeat center;
+    background-size: cover;
+    background-color: #2ecc71;
+  }
+  .right {
+    background-color: #f1c40f;
+    flex-direction: column;
+  }
+ 
+  
+  /* Header Styling */
+  #heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Input fields */
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Focused input fields */
+  #input:focus {
+    outline: none;
+    border-color: #007bff;
+    color: #333 !important;
+    background-color: white !important;
+  }
+  
+  /* Button Styling */
+  #button {
+    background-color: #007bff !important;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #button:hover {
+    background-color: #0056b3;
+  }
+  
+  #button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Error message styling */
+  p {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+  
+  /* Toggle button for switching between Sign In and Sign Up */
+  #button + #button {
+    margin-top: 15px;
+    background-color: #f39c12;
+    color: white;
+  }
+  
+  #button + #button:hover {
+    background-color: #e67e22;
+  }
+  

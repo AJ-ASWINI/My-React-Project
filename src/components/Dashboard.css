@@ -1,0 +1,16 @@
+.taste{
+ text-align: center;
+ padding: 30px 10px;
+}
+
+#cards{
+    padding: 0px 100px;
+}
+
+#offer{
+    height: 400px;
+    margin: 10px 100px;
+    margin-bottom: 50px;
+    background: url('/src/assets/foodoffer.jpg') no-repeat center;
+    background-size: cover;
+}
